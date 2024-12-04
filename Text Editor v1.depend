@@ -1,5 +1,14 @@
 # depslib dependency file v1.0
-1732615028 source:d:\kuliah\semester_3\data structures & algorithms (dsa)\praktikum\tp_mod_11\text editor v1\main.cpp
+1733061683 source:d:\kuliah\semester_3\data structures & algorithms (dsa)\praktikum\tp_mod_11\text editor v1\main.cpp
 	<iostream>
 	<conio.h>
+	"header.h"
+
+1733061664 source:d:\kuliah\semester_3\data structures & algorithms (dsa)\praktikum\tp_mod_11\text editor v1\header.cpp
+	<iostream>
+	<conio.h>
+	"header.h"
+
+1733061688 d:\kuliah\semester_3\data structures & algorithms (dsa)\praktikum\tp_mod_11\text editor v1\header.h
+	<iostream>
 
