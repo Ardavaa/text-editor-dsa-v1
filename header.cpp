@@ -1,6 +1,9 @@
 #include <iostream>
 #include <conio.h>  // Untuk _kbhit() dan _getch() buat display text editornya
 #include "header.h"
+
+bool breakStatement = false;
+
 void createList(List &L) {
     L.first = nullptr;
     L.last = nullptr;
@@ -41,6 +44,7 @@ void insertChar(List &L, infotype x) {
     }
 }
 
+
 void removeChar(List &L) {
     if (L.cursor != nullptr) {
         address temp = L.cursor;
@@ -72,8 +76,8 @@ int count_words(List L) {
         if (head->info == ' ' || head->info == '\t' || head->info == '\n') {
             // kalaua ada spasi, tab, atau newline, kita anggap sebagai pemisah kata
             if (in_word) {
-                word_count++;  // Menyelesaikan satu kata
-                in_word = false;  // Keluar dari kata
+                word_count++;  // increment satu kata
+                in_word = false;  // keluar dari kata
             }
         } else {
             // kalau karakter bukan spasi, kita masih dalam kata
@@ -137,13 +141,13 @@ void handleInput(List &L) {
     cout << "[ESC]: Exit Editor" << endl;
     cout << "Start typing..." << endl;
 
-    while (true) {
+    while (true && breakStatement == false) {
         if (_kbhit()) {  // meng-cath input dari si keyboard
             c = _getch();
 
             // navigasi kursor
             if (c == 27) {  // ESC key untuk keluar
-                break;
+                breakStatement = true;
             } else if (c == -32) {  // arrow keys
                 c = _getch();
                 if (c == 75) {  // left arrow
